@@ -1,0 +1,15 @@
+app TodoApp {
+  wasp: {
+    version: "^0.14.0" // Pins the version of wasp to use
+  },
+title: "TodoApp" // Used as the browser tab title. Note that all strings in wasp are Double Quotes!
+}
+
+route RootRoute { path: "/", to: MainPage }
+page MainPage {
+  // We specify that the React implementation of the page is exported from
+  // 'src/MainPage.tsx'. This statement uses standard JS import syntax.
+  // Use '@src' to reference files inside the 'src' folder. 
+  component: import { MainPage } from "@src/MainPage"
+}
+
